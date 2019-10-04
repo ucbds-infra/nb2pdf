@@ -5,8 +5,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 	name = "nd2pdf",
-	version = "1.3.0",
-	author = "", # TODO: add author
+	version = "0.0.1",
+	author = "Chris Pyles & Yanay Rosen", # TODO: add author
 	author_email = "cpyles@berkeley.edu",
 	description = "Jupyter Notebook to PDF Converter",
 	long_description = long_description,
