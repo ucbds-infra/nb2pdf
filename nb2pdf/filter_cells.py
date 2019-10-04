@@ -49,7 +49,7 @@ def is_deletable_code(cell):
 				return False
 
 	# if neither of above is True, then cell is deletable
-	return False
+	return True
 
 def is_deletable_markdown(cell):
 	# check if the "ignore" tag is in metadata
