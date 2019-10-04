@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
 	long_description = fh.read()
 
 setuptools.setup(
-	name = "nd2pdf",
+	name = "nb2pdf",
 	version = "0.0.1",
 	author = "Chris Pyles & Yanay Rosen", # TODO: add author
 	author_email = "cpyles@berkeley.edu",
