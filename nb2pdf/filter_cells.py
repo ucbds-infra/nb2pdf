@@ -3,7 +3,6 @@
 ################################################
 
 import json
-import re
 
 def load_and_filter(nb_path):
 	with open(nb_path) as f:
@@ -24,8 +23,7 @@ def filter_notebook_cells(notebook):
 
 		curr_idx += 1
 
-	# reverse indices list so that we do not need to decrement while
-	# deleting
+	# reverse indices list so that we do not need to decrement while deleting
 	idx_to_delete.reverse()
 
 	# delete at indices
