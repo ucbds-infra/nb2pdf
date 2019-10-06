@@ -14,6 +14,7 @@ addons:
   apt_packages:
     - pandoc
     - texlive
+    - texlive-xetex
 
 install:
   - pip install -r requirements.txt
