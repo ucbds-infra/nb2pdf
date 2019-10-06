@@ -16,6 +16,7 @@ addons:
     - texlive-xetex
 
 install:
+  - mkdir /usr/share/texlive/texmf-dist/tex/latex/iftex
   - curl http://tug.ctan.org/macros/generic/iftex/iftex.sty > /usr/share/texlive/texmf-dist/tex/latex/iftex/iftex.sty
   - pip install -r requirements.txt
 
