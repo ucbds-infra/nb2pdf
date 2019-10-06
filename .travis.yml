@@ -14,7 +14,9 @@ addons:
   apt_packages:
     - pandoc
     - texlive-xetex
+
 install:
+  - curl http://tug.ctan.org/macros/generic/iftex/iftex.sty > /usr/share/texlive/texmf-dist/tex/latex/iftex/iftex.sty
   - pip install -r requirements.txt
 
 script:
