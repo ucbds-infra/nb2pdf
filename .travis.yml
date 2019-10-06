@@ -13,11 +13,9 @@ sudo: false
 addons:
   apt_packages:
     - pandoc
-    - texlive-xetex
+    - texlive
 
 install:
-  - mkdir /usr/share/texlive/texmf-dist/tex/latex/iftex
-  - curl http://tug.ctan.org/macros/generic/iftex/iftex.sty > /usr/share/texlive/texmf-dist/tex/latex/iftex/iftex.sty
   - pip install -r requirements.txt
 
 script:
