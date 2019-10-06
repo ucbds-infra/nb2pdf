@@ -21,6 +21,7 @@ addons:
       - lmodern
 install:
   - travis_retry python -m pip install tox
+  - travis_retry python -m pip install pypandoc
   # only download pandoc, the tests should work without a install of pypandoc
   - python -c "from pypandoc import download_pandoc as dp; dp(targetfolder='~/bin/');"
   - export PATH=~/bin:$PATH
