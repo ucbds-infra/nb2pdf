@@ -12,6 +12,11 @@ sudo: false
 
 install:
   - pip install -r requirements.txt
+  - wget https://github.com/jgm/pandoc/releases/download/1.15.1/pandoc-1.15.1-1-amd64.deb
+  - dpkg -i pandoc-1.15.1-1-amd64.deb
+  - apt-get update
+  - apt-get clean
+  - apt-get install texlive-xetex -y
 
 script:
   - coverage run -m unittest discover
