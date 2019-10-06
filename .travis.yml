@@ -11,14 +11,9 @@ matrix:
 sudo: false
 
 addons:
-  apt:
-    packages:
-      # Some tests do a pdf conversion, so install latex which is needed for that.
-      - texlive-latex-base
-      - texlive-latex-extra
-      - texlive-fonts-recommended
-      - texlive-latex-recommended
-      - lmodern
+  apt_packages:
+    - pandoc
+    - texlive-xetex
 install:
   - travis_retry python -m pip install tox
   - travis_retry python -m pip install pypandoc
