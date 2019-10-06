@@ -1,5 +1,7 @@
 # Jupyter Notebook to PDF Converter
 
+[![Build Status](https://travis-ci.org/ucbds-infra/nb2pdf.svg?branch=master)](https://travis-ci.org/ucbds-infra/nb2pdf) [![codecov](https://codecov.io/gh/ucbds-infra/nb2pdf/branch/master/graph/badge.svg)](https://codecov.io/gh/ucbds-infra/nb2pdf)
+
 This package converst Jupyter Notebooks (`.ipynb` files) to PDFs using nbconvert. It is designed to create manual submissions for the [Python local grader](https://github.com/ucbds-infra/local-grader) being developed by the UC Berkeley Division of Data Science and Information.
 
 ## Usage
