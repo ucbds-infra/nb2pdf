@@ -2,7 +2,7 @@
 
 This package is a converter for IPYNB files to PDFs that runs on nbconvert and pandoc. This package was built for use in [otter-grader](https://github.com/ucbds-infra/otter-grader), an open-source local autograding framework.
 
-Because this converter was designed for an autograding library, it has some import [caveats](#Cell-Filtering) about how it generates PDFs, most importantly concerning how it filters cells. **This library is not a wrapper for nbconvert, as it has filtering behaviors that will exclude several cells by default.**
+Because this converter was designed for an autograding library, it has some import [caveats](#Cell-Filtering) about how it generates PDFs, most importantly concerning how it filters cells. **This library is not meant to be a wrapper for nbconvert, as it has filtering behaviors that will exclude several cells by default.**
 
 ## Installation
 
