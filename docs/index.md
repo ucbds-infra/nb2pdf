@@ -9,7 +9,7 @@ Because this converter was designed for an autograding library, it has some impo
 nb2pdf is installed via pip:
 
 ```
-pip install nd2pdf
+pip install nb2pdf
 ```
 
 ### Dependencies
