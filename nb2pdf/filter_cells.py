@@ -45,7 +45,7 @@ def is_deletable_code(cell):
 	# check if there is an image in the output
 	elif len(cell["outputs"]) > 0:
 		for output in cell["outputs"]:
-			if "image/png" in output["data"]:
+			if "data" in output and "image/png" in output["data"]:
 				return False
 
 	# if neither of above is True, then cell is deletable
