@@ -22,18 +22,6 @@ class TestCellFilter(unittest.TestCase):
 		output = load_and_filter(self._file)
 		self.assertEqual(output, self._correct_output)
 
-class TestConvertFunction(unittest.TestCase):
-	@classmethod
-	def setUpClass(self):
-		self._file = "test/test-nb.ipynb"
-
-	@mock.patch("nb2pdf.pdf.PDFExporter.from_file")
-	def test_pdf_call(self, mocked):
-		try:
-			convert(self._file)
-		except ValueError:
-			mocked.assert_called_once()
-
 class TestPDFIsExported(unittest.TestCase):
 	@classmethod
 	def setUpClass(self):

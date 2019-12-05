@@ -4,9 +4,13 @@
 
 import json
 
-def load_and_filter(nb_path):
+def load_notebook(nb_path):
 	with open(nb_path) as f:
 		notebook = json.load(f)
+	return notebook
+
+def load_and_filter(nb_path):
+	notebook = load_notebook(nb_path)
 	return filter_notebook_cells(notebook)
 
 def filter_notebook_cells(notebook):

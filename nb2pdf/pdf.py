@@ -1,7 +1,12 @@
+##########################################
+##### IPYNB to PDF Conversion Script #####
+##########################################
+
 import nbformat
-from nbconvert import PDFExporter
 import json
 from io import StringIO
+from nbpdfexport import notebook_to_pdf
+import asyncio
 
 
 def export_to_pdf(notebook, pdf_name):
@@ -11,9 +16,12 @@ def export_to_pdf(notebook, pdf_name):
         notebook: json object / dictionary version of notebook to convert.
         pdf_name: name of outputted pdf
     """
-    pdf_exporter = PDFExporter()
 
-    pdf_data, resources = pdf_exporter.from_file(StringIO(json.dumps(notebook)))
+    try:
+        version = notebook["nbformat"]
+    except KeyError:
+        version = 4
 
-    with open(pdf_name, "wb") as f:
-        f.write(pdf_data)
+    notebook_model = nbformat.read(StringIO(json.dumps(notebook)), as_version = version)
+
+    asyncio.get_event_loop().run_until_complete(notebook_to_pdf(notebook_model, pdf_name))
