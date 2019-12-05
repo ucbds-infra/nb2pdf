@@ -24,4 +24,8 @@ def export_to_pdf(notebook, pdf_name):
 
     notebook_model = nbformat.read(StringIO(json.dumps(notebook)), as_version = version)
 
-    asyncio.get_event_loop().run_until_complete(notebook_to_pdf(notebook_model, pdf_name))
+    try:
+        __IPYTHON__
+        asyncio.ensure_future(notebook_to_pdf(notebook_model, pdf_name))
+    except NameError:
+        asyncio.get_event_loop().run_until_complete(notebook_to_pdf(notebook_model, pdf_name))
