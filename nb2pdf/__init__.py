@@ -5,7 +5,7 @@
 from .filter_cells import *
 from .pdf import *
 
-def convert(path, dest=None, filtering=False):
+def convert(path, dest=None, filtering=False, filter_type="html"):
 	"""
 	Converts IPYNB file at PATH to PDF
 	Args:
@@ -13,7 +13,10 @@ def convert(path, dest=None, filtering=False):
 		dest: (optional) Output path
 		filtering: (optional) whether or not to filter the
 			notebook cells
+		filter_type: (optional) how to filter the notebook, using
+			HTML comments or cell tags; "html" or "tags"
 	"""
+	assert filter_type in ["html", "tags"], "{} is not a valid filter type".format(filter_type)
 
 	if dest is  None:
 		pdf_path = path[:-5] + "pdf"
@@ -21,7 +24,7 @@ def convert(path, dest=None, filtering=False):
 		pdf_path = dest
 
 	if filtering:
-		notebook = load_and_filter(path)
+		notebook = load_and_filter(path, filter_type=filter_type)
 	else:
 		notebook = load_notebook(path)
 		

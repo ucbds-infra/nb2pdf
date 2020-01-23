@@ -15,12 +15,19 @@ class TestCellFilter(unittest.TestCase):
 	@classmethod
 	def setUpClass(self):
 		self._file = "test/test-nb.ipynb"
+		self._html_file = "test/test-nb-html.ipynb"
 		with open("test/output.ipynb") as f:
 			self._correct_output = json.load(f)
+		with open("test/html-output.ipynb") as f:
+			self._correct_html_output = json.load(f)
 
 	def test_filter(self):
-		output = load_and_filter(self._file)
+		output = load_and_filter(self._file, filter_type="tags")
 		self.assertEqual(output, self._correct_output)
+	
+	def test_html_filter(self):
+		output = load_and_filter(self._html_file, filter_type="html")
+		self.assertEqual(output, self._correct_html_output)
 
 class TestPDFIsExported(unittest.TestCase):
 	@classmethod
