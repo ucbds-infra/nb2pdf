@@ -7,3 +7,7 @@ This package converst Jupyter Notebooks (`.ipynb` files) to PDFs using nbconvert
 ## Usage
 
 The converter by default leaves all cells alone but **removes** code cells without an image in the output. (This is designed to output graphs generated in notebooks in the PDF.) Using metadata tags, cells can be included (with the `include` tag) or excluded (with the `ignore` tag).
+
+## Changelog
+
+**v0.4.0:** Added autosave on export from Jupyter Notebook environment
