@@ -4,8 +4,10 @@
 
 import argparse
 import os
+import time
 
 from IPython import get_ipython
+from IPython.display import display
 
 from .filter_cells import *
 from .pdf import *
@@ -18,11 +20,12 @@ def force_checkpoint():
 	If in a Jupyter environment, force-saves notebook
 	"""
 	from IPython.core.magics.display import Javascript
-	return Javascript('''
+	display(Javascript('''
         require(["base/js/namespace"], function() {
 			Jupyter.notebook.save_notebook();
 		});
-    ''')
+    '''))
+	time.sleep(0.5)
 
 def convert(path, dest=None, filtering=False, filter_type="html"):
 	"""
