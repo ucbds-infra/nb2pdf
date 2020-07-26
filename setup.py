@@ -3,6 +3,9 @@ import setuptools
 with open("README.md", "r") as fh:
 	long_description = fh.read()
 
+with open("requirements.txt") as f:
+	requirements = "\n".split(f.read())
+
 setuptools.setup(
 	name = "nb2pdf",
 	version = "0.5.1",
@@ -19,8 +22,6 @@ setuptools.setup(
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
 	],
-	install_requires = [
-		"nbpdfexport"
-	],
+	install_requires = requirements,
 	scripts=["bin/nb2pdf"]
 )

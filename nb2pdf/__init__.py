@@ -27,7 +27,7 @@ def force_checkpoint():
     '''))
 	time.sleep(0.5)
 
-def convert(path, dest=None, filtering=False, filter_type="html"):
+def convert(path, dest=None, filtering=False, filter_type="html", timeout=30000):
 	"""
 	Converts IPYNB file at PATH to PDF
 	Args:
@@ -53,7 +53,7 @@ def convert(path, dest=None, filtering=False, filter_type="html"):
 	else:
 		notebook = load_notebook(path)
 		
-	export_to_pdf(notebook, pdf_path)
+	export_to_pdf(notebook, pdf_path, timeout=timeout)
 
 def cli():
 	"""Command-Line Interface for nb2pdf"""

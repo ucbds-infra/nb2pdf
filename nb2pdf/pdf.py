@@ -10,7 +10,7 @@ import asyncio
 from .asyncio_patch import monkeypatch, run_nested_until_complete
 
 
-def export_to_pdf(notebook, pdf_name):
+def export_to_pdf(notebook, pdf_name, timeout=30000):
     """
     Export a notebook as a pdf.
     Args:
@@ -27,6 +27,6 @@ def export_to_pdf(notebook, pdf_name):
 
     try:
         __IPYTHON__
-        run_nested_until_complete(notebook_to_pdf(notebook_model, pdf_name))
+        run_nested_until_complete(notebook_to_pdf(notebook_model, pdf_name, timeout=timeout))
     except NameError:
-        asyncio.get_event_loop().run_until_complete(notebook_to_pdf(notebook_model, pdf_name))
+        asyncio.get_event_loop().run_until_complete(notebook_to_pdf(notebook_model, pdf_name, timeout=timeout))
