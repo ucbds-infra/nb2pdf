@@ -26,6 +26,7 @@ setuptools.setup(
 		"nbformat",
 		"nbpdfexport==0.2.2",
 		"codecov",
+		"IPython"
 	],
 	scripts=["bin/nb2pdf"]
 )
