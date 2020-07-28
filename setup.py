@@ -22,6 +22,10 @@ setuptools.setup(
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
 	],
-	install_requires = requirements,
+	install_requires = [
+		"nbformat",
+		"nbpdfexport @ git+https://github.com/chrispyles/nbpdfexport",
+		"codecov",
+	],
 	scripts=["bin/nb2pdf"]
 )
