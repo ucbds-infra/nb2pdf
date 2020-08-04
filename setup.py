@@ -8,7 +8,7 @@ with open("requirements.txt") as f:
 
 setuptools.setup(
 	name = "nb2pdf",
-	version = "0.6.1",
+	version = "0.6.2",
 	author = "Chris Pyles & Yanay Rosen",
 	author_email = "ds-infra@berkeley.edu",
 	description = "Jupyter Notebook to PDF Converter",
