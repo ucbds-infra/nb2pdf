@@ -1,4 +1,4 @@
 nbformat
-git+https://github.com/chrispyles/nbpdfexport
+nbpdfexport
 codecov
 IPython

@@ -24,7 +24,7 @@ setuptools.setup(
 	],
 	install_requires = [
 		"nbformat",
-		"nbpdfexport==0.2.2",
+		"nbpdfexport",
 		"codecov",
 		"IPython"
 	],
